@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
 	val springBootVersion = "3.0.1"
@@ -40,4 +41,14 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.named<BootBuildImage>("bootBuildImage") {
+	tags.add("ghcr.io/moyaf/la-la-land-or-nicky-minaj:latest")
+	docker {
+		publishRegistry {
+			username.set("MoyaF")
+			password.set(requireNotNull(System.getenv("DOCKER_REGISTRY_PASSWORD")))
+		}
+	}
 }

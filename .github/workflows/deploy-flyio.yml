@@ -29,17 +29,15 @@ jobs:
           distribution: corretto
           java-version: 17
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: MoyaF
-          password: ${{ secrets.GHCR_SECRET }}
-
       - name: Setup and execute Gradle 'bootBuildImage' task
         uses: gradle/gradle-build-action@v2
+        env:
+          DOCKER_REGISTRY_PASSWORD: ${{ secrets.GHCR_SECRET }}
         with:
-          arguments: bootBuildImage --imageName ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }} --publishImage
+          arguments: |
+            bootBuildImage 
+            --imageName ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }}
+            --publishImage
 
       - name: Install flyctl
         env:
