@@ -39,7 +39,7 @@ jobs:
       - name: Setup and execute Gradle 'bootBuildImage' task
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: bootBuildImage --imageName ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }} --tag ghcr.io/moyaf/la-la-land-or-nicky-minaj:latest --publishImage
+          arguments: bootBuildImage --imageName ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }} --publishImage
 
       - name: Install flyctl
         env:
