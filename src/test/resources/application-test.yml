@@ -1,0 +1,4 @@
+spring:
+  datasource:
+    url: OVERWRITTEN_BY_TEST
+    username: OVERWRITTEN_BY_TEST

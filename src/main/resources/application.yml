@@ -1,1 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://la-la-land-or-nicky-minaj-db.internal:5432/postgres
+    username: postgres
 
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:postgresql://0.0.0.0:5432/postgres
+    username: postgres
+    password: postgres

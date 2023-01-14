@@ -25,12 +25,19 @@ repositories {
 val ktlint: Configuration by configurations.creating
 
 val ktlintVersion = "0.48.1"
+val flywayVersion = "9.11.0"
+val testcontainersVersion = "1.17.6"
 
 dependencies {
 
     // Spring
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // Data
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.flywaydb:flyway-core:$flywayVersion")
+    runtimeOnly("org.postgresql:postgresql")
 
     // Kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -46,6 +53,7 @@ dependencies {
 
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.testcontainers:postgresql:$testcontainersVersion")
 }
 
 val outputDir = "${project.buildDir}/reports/ktlint/"

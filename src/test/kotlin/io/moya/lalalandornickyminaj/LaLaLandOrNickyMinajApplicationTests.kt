@@ -1,10 +1,9 @@
 package io.moya.lalalandornickyminaj
 
+import io.moya.lalalandornickyminaj.testsupport.AbstractIntegrationTest
 import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
-class LaLaLandOrNickyMinajApplicationTests {
+class LaLaLandOrNickyMinajApplicationTests : AbstractIntegrationTest() {
 
     @Test
     fun contextLoads() {
