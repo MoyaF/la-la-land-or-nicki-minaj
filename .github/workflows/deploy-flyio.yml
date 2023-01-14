@@ -47,4 +47,4 @@ jobs:
       - name: Deploy to Fly.io
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-        run: flyctl deploy --image ghcr.io/moyaf/blog-be:${{ steps.version.outputs.version }}
+        run: flyctl deploy --image ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }}

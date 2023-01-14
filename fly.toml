@@ -1,12 +1,9 @@
-# fly.toml file generated for la-la-land-or-nicky-minaj on 2023-01-14T13:12:51+01:00
+# fly.toml file generated for la-la-land-or-nicky-minaj on 2023-01-14T14:19:49+01:00
 
 app = "la-la-land-or-nicky-minaj"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
-
-[build]
-  image = "ghcr.io/moyaf/la-la-land-or-nicky-minaj:latest"
 
 [env]
 
