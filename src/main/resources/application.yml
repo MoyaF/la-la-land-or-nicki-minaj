@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://la-la-land-or-nicky-minaj-db.internal:5432/postgres
-    username: postgres
-
   jpa:
     hibernate:
       ddl-auto: validate
