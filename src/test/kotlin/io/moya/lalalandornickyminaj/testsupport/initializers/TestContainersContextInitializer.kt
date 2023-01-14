@@ -14,7 +14,7 @@ private val log = LoggerFactory.getLogger(TestContainersContextInitializer::clas
 class TestContainersContextInitializer : ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     companion object {
-        private val POSTGRES_DOCKER_IMAGE_NAME = DockerImageName.parse("flyio/postgres")
+        private val POSTGRES_DOCKER_IMAGE_NAME = DockerImageName.parse("flyio/postgres:14.6")
             .asCompatibleSubstituteFor("postgres")
     }
 

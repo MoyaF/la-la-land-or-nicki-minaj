@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   postgresql:
-    image: flyio/postgres
+    image: flyio/postgres:14.6
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
