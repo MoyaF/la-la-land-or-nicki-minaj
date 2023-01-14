@@ -4,7 +4,23 @@ on:
 name: Build and Test code
 
 jobs:
-  build-and-test:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 17
+
+      - name: Setup and execute Gradle 'test' task
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -20,3 +36,14 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: test
+  dependabot-auto-merge:
+    name: Dependabot Auto Merge
+    needs: [ build, test ]
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'}}
+    steps:
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
