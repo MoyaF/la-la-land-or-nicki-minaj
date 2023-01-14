@@ -48,3 +48,9 @@ jobs:
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         run: flyctl deploy --image ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }}
+
+      - name: Tag Version
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ steps.version.outputs.version }}
+          message: "Releasing version ${{ steps.gitversion.outputs.version }}"
