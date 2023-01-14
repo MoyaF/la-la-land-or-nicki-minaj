@@ -54,3 +54,4 @@ jobs:
         with:
           tag: ${{ steps.version.outputs.version }}
           message: "Releasing version ${{ steps.gitversion.outputs.version }}"
+          github_token: ${{ secrets.GHCR_SECRET }}
