@@ -5,7 +5,7 @@ plugins {
 	val springBootVersion = "3.0.1"
 	val springDependencyManagerVersion = "1.1.0"
 	val graalvmBuildToolsVersion = "0.9.19"
-	val kotlinPluginVersion = "1.7.22"
+	val kotlinPluginVersion = "1.8.0"
 
 	id("org.springframework.boot") version springBootVersion
 	id("io.spring.dependency-management") version springDependencyManagerVersion
