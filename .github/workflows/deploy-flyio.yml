@@ -36,10 +36,10 @@ jobs:
           username: MoyaF
           password: ${{ secrets.GHCR_SECRET }}
 
-      - name: Setup and execute Gradle 'test' task
+      - name: Setup and execute Gradle 'bootBuildImage' task
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: bootBuildImage --imageName --tag --publishImage
+          arguments: bootBuildImage --imageName ghcr.io/moyaf/la-la-land-or-nicky-minaj:${{ steps.version.outputs.version }} --tag ghcr.io/moyaf/la-la-land-or-nicky-minaj:latest --publishImage
 
       - name: Install flyctl
         env:
