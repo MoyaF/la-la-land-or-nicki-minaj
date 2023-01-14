@@ -5,6 +5,9 @@ kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
+[build]
+  image = "ghcr.io/moyaf/la-la-land-or-nicky-minaj:latest"
+
 [env]
 
 [experimental]

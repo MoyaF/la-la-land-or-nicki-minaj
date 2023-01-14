@@ -48,7 +48,7 @@ tasks.named<BootBuildImage>("bootBuildImage") {
 	docker {
 		publishRegistry {
 			username.set("MoyaF")
-			password.set(requireNotNull(System.getenv("DOCKER_REGISTRY_PASSWORD")))
+			password.set(System.getenv("DOCKER_REGISTRY_PASSWORD") ?: "")
 		}
 	}
 }
