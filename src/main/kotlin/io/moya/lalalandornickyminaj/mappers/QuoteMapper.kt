@@ -7,11 +7,11 @@ import io.moya.lalalandornickyminaj.repositories.quote.model.QuoteEntity
 class QuoteMapper {
 
     companion object {
-        fun mapToQuote(quoteEntity: QuoteEntity) = with(quoteEntity) {
+        fun mapToQuote(quoteEntity: QuoteEntity): Quote = with(quoteEntity) {
             Quote(id = id, text = text)
         }
 
-        fun mapToRandomQuoteQuery(quote: Quote) = with(quote) {
+        fun mapToRandomQuoteQuery(quote: Quote): RandomQuoteQuery = with(quote) {
             RandomQuoteQuery(id, text)
         }
     }
