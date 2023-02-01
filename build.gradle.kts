@@ -25,7 +25,7 @@ repositories {
 val ktlint: Configuration by configurations.creating
 
 val ktlintVersion = "0.48.2"
-val flywayVersion = "9.12.0"
+val flywayVersion = "9.14.0"
 val testcontainersVersion = "1.17.6"
 
 dependencies {
