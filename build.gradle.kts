@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-    val springBootVersion = "3.0.3"
+    val springBootVersion = "3.0.4"
     val springDependencyManagerVersion = "1.1.0"
     val graalvmBuildToolsVersion = "0.9.20"
     val kotlinPluginVersion = "1.8.10"
